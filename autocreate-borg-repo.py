@@ -21,6 +21,7 @@ new_repo_vars = {
     'region': 'eu'
 }
 res = client.execute(REPO_ADD, new_repo_vars)
+print(res)
 new_repo_path = res['data']['repoAdd']['repoAdded']['repoPath']
 print('Added new repo with path:', new_repo_path)
-
+with open('./config/') as FILE
