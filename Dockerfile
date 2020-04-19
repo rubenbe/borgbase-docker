@@ -23,9 +23,7 @@ RUN apk add --no-cache \
     cd /usr/lib/python3.8/ && \
     rm -rf site-packages* \
            lib2to3 \
-           asyncio \
            ensurepip \
-           distutils \
            pydoc_data \
            multiprocessing && \
     sh -c 'borgmatic -h > /dev/null'
