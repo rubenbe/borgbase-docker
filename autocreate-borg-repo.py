@@ -84,6 +84,10 @@ location:
         - /config
     repositories:
         - """ + new_repo_path + """
+storage:
+    encryption_passphrase: ""
+    borg_base_directory: "/storage/borg/"
+    borg_cache_directory: "/cache"
 retention:
     keep_within: 48H
     keep_daily: 7
