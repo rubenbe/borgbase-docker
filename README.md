@@ -1,5 +1,7 @@
 # Borgbase docker image
 
+[![](https://images.microbadger.com/badges/image/rubenbe/borgbase-backup.svg)](https://microbadger.com/images/rubenbe/borgbase-backup)
+
 ## Building
 ```shell
 docker build -t backup .
