@@ -52,11 +52,14 @@ if repo_exists(BACKUP_NAME):
     sys.exit(0) 
 
 
+pp = pprint.PrettyPrinter(indent=4)
 new_key_vars = {
     'name': 'Key for ' + BACKUP_NAME,
-    'keyData': open('/storage/id_ed25519.pub').readline()
+    'keyData': open('/storage/ssh/id_ed25519.pub').readline().strip()
 }
+pp.pprint(new_key_vars)
 res = client.execute(SSH_ADD, new_key_vars)
+pp.pprint(res)
 new_key_id = res['data']['sshAdd']['keyAdded']['id']
 
 new_repo_vars = {
@@ -65,11 +68,10 @@ new_repo_vars = {
     'appendOnlyKeys': [new_key_id],
     'region': 'eu',
     'alertDays': 1,
-    'quota': 1024,
+    'quota': 2048,
     'quotaEnabled': True
 }
 res = client.execute(REPO_ADD, new_repo_vars)
-pp = pprint.PrettyPrinter(indent=4)
 pp.pprint(res)
 new_repo_id = res['data']['repoAdd']['repoAdded']['id']
 new_repo_path = new_repo_id + '@' + repo_hostname(new_repo_id) + ':repo'
