@@ -88,10 +88,12 @@ storage:
     encryption_passphrase: ""
     borg_base_directory: "/storage/borg/"
     borg_cache_directory: "/cache"
+    archive_name_format: '""" + BACKUP_NAME + """__backup__{now}'
 retention:
     keep_within: 48H
     keep_daily: 7
     keep_weekly: 4
     keep_monthly: 12
     keep_yearly: 1
+    prefix: """ + BACKUP_NAME + """__backup__
 """)
