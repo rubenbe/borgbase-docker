@@ -86,7 +86,7 @@ location:
         - """ + new_repo_path + """
 storage:
     encryption_passphrase: ""
-    borg_base_directory: "/storage/borg/"
+    borg_base_directory: "/repo"
     borg_cache_directory: "/cache"
     archive_name_format: '""" + BACKUP_NAME + """__backup__{now}'
 retention:
