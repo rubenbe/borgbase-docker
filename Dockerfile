@@ -31,7 +31,9 @@ RUN mkdir -p  ~/.ssh && echo -e \
 'Host *.borgbase.com\n' \
 '  IdentityFile /storage/ssh/id_ed25519\n' \
 '  UserKnownHostsFile /usr/local/share/borgbase/known_hosts\n' \
-> /root/.ssh/config
+> /root/.ssh/config && \
+ln -s /config/borgmatic /etc/borgmatic
+
 
 ADD known_hosts /usr/local/share/borgbase/known_hosts
 ADD backup.sh /usr/local/bin/backup
