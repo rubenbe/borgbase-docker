@@ -19,6 +19,7 @@ RUN apk add --no-cache \
     python3 \
     openssh-client \
     curl \
+    mariadb-client \
     acl && \
     cd /usr/lib/python3.8/ && \
     rm -rf site-packages* \
