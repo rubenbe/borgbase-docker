@@ -39,5 +39,6 @@ ln -s /config/borgmatic /etc/borgmatic
 ADD known_hosts /usr/local/share/borgbase/known_hosts
 ADD backup.sh /usr/local/bin/backup
 ADD autocreate-borg-repo.py /usr/local/bin/autocreate-borg-repo
+ADD nightly-backup.py /etc/periodic/daily/nightly-backup
 COPY --from=builder /usr/local/bin/borgbase_api_client /usr/local/bin/borgbase_api_client
 CMD /usr/local/bin/backup
